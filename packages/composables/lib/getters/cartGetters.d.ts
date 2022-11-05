@@ -1,0 +1,16 @@
+import { CartGetters, AgnosticPrice, AgnosticTotals, AgnosticCoupon, AgnosticDiscount } from '@vue-storefront/core';
+import { Cart, CartLineItem } from '@vue-storefront/sylius-api/src/types';
+export declare const getCartItems: (cart: Cart) => CartLineItem[];
+export declare const getCartItemName: (product: CartLineItem) => string;
+export declare const getCartItemImage: (product: CartLineItem) => string;
+export declare const getCartItemPrice: (product: CartLineItem) => AgnosticPrice;
+export declare const getCartItemQty: (product: CartLineItem) => number;
+export declare const getCartItemAttributes: (product: CartLineItem, filterByAttributeName?: Array<string>) => {};
+export declare const getCartItemSku: (product: CartLineItem) => string;
+export declare const getCartTotals: (cart: Cart) => AgnosticTotals;
+export declare const getCartShippingPrice: (cart: Cart) => number;
+export declare const getCartTotalItems: (cart: Cart) => number;
+export declare const getFormattedPrice: (price: number) => string;
+export declare const getCoupons: (cart: Cart) => AgnosticCoupon[];
+export declare const getDiscounts: (cart: Cart) => AgnosticDiscount[];
+export declare const cartGetters: CartGetters<Cart, CartLineItem>;
