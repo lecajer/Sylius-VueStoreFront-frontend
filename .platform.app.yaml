@@ -12,6 +12,11 @@ type: 'nodejs:14'
 build:
   flavor: none
 
+#variables:
+    # env:
+        # URL of the backend, if external, set it in the Platform.sh console
+        #SYLIUS_BASE_URL : http://nginx:80
+
 dependencies:
   nodejs:
     yarn: "*"
