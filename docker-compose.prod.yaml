@@ -4,22 +4,21 @@ services:
   front:
     build:
       context: ./
-      target: node_dev
+      target: node_prod
     ports:
+      # Choose either ports or Traefik
       - "3000:3000"
-    container_name: front
-    stdin_open: true
+    container_name: sylius-vsf-front
     environment:
       # Reach backend server
       - SYLIUS_BASE_URL=http://nginx:80
-      - IMAGES_BASE_URL=http://nginx:80
+      - IMAGES_BASE_URL=http://YOUR_DOMAIN
       - SYLIUS_DEFAULT_LOCALE=en_US
-    volumes:
-       - ./:/usr/src/app/my-app
-       - /usr/src/app/my-app/node_modules
+    labels:
+      - "traefik.http.routers.sylius-vsf-front.rule=Host(`YOUR_DOMAIN`)"
 
 # Use network managed by the backend
-networks: 
-  default: 
+networks:
+  default:
     name: sylius-vuestorefront
     external: true
