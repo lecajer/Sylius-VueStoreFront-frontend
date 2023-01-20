@@ -7,7 +7,7 @@ module.exports = {
         locale: process.env.SYLIUS_DEFAULT_LOCALE,
         imagePaths: {
           thumbnail: process.env.IMAGES_BASE_URL + '/media/cache/sylius_shop_product_thumbnail',
-          regular: process.env.IMAGES_BASE_URL + '/sylius_shop_product_large_thumbnail'
+          regular: process.env.IMAGES_BASE_URL + '/media/cache/sylius_shop_product_large_thumbnail'
         },
         customHeaders: {}
       }
